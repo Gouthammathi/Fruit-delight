@@ -6,6 +6,7 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import FeastGallerySection from './components/FeastGallerySection';
 
 const Layout = ({ children }) => {
   const location = useLocation();

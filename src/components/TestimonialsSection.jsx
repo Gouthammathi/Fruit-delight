@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:gap-10 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -51,11 +51,11 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15, duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true, amount: 0.5 }}
-              className="relative bg-white/90 rounded-3xl shadow-xl flex flex-col items-center pt-0 pb-8 px-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 border-t-8 border-orange-400"
+              className="relative bg-white/90 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col items-center pt-0 pb-6 sm:pb-8 px-4 sm:px-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 border-t-8 border-orange-400 w-full max-w-xs sm:max-w-sm mx-auto"
             >
               {/* Gradient ring avatar */}
-              <div className="relative -top-10 mb-2">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#F88B42] via-[#D6DC64] to-[#194528] p-1 shadow-lg">
+              <div className="relative -top-8 sm:-top-10 mb-2">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#F88B42] via-[#D6DC64] to-[#194528] p-1 shadow-lg">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white">
                     <img src={testimonial.image} alt={testimonial.name + ' avatar'} className="w-full h-full object-cover" />
                   </div>
@@ -66,18 +66,20 @@ const TestimonialsSection = () => {
                 initial={{ rotate: -10 }}
                 animate={{ rotate: 0 }}
                 transition={{ type: 'spring', stiffness: 120, delay: 0.3 + index * 0.1 }}
-                className="bg-[#F88B42]/90 rounded-full p-3 shadow-md mb-4 -mt-4"
+                className="bg-[#F88B42]/90 rounded-full p-2 sm:p-3 shadow-md mb-3 sm:mb-4 -mt-4"
               >
-                <FaQuoteLeft className="h-7 w-7 text-white drop-shadow" />
+                <FaQuoteLeft className="h-6 w-6 sm:h-7 sm:w-7 text-white drop-shadow" />
               </motion.div>
               {/* Quote */}
-              <p className="text-lg text-[#194528] leading-relaxed mb-6 text-center font-medium italic">
+              <p className="text-base sm:text-lg text-[#194528] leading-relaxed mb-4 sm:mb-6 text-center font-medium italic">
                 "{testimonial.quote}"
               </p>
               {/* Name, location, rating */}
-              <div className="flex flex-col items-center gap-2 w-full mt-auto">
-                <div className="font-bold text-[#F88B42] text-lg">{testimonial.name}</div>
-                <div className="text-sm text-[#194528]/70 mb-2">{testimonial.location}</div>
+              <div className="flex flex-col items-center gap-1 w-full mt-auto">
+                <div className="font-bold text-[#F88B42] text-base sm:text-lg">{testimonial.name}</div>
+                {testimonial.location && (
+                  <div className="text-xs sm:text-sm text-[#194528]/70 mb-1 sm:mb-2">{testimonial.location}</div>
+                )}
                 <div className="flex items-center gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <motion.span
@@ -87,7 +89,7 @@ const TestimonialsSection = () => {
                       transition={{ delay: 0.5 + i * 0.1, type: 'spring', stiffness: 200 }}
                       className="inline-flex items-center justify-center bg-[#D6DC64] rounded-full p-1 shadow-md"
                     >
-                      <FaStar className="h-5 w-5 text-[#F88B42]" />
+                      <FaStar className="h-4 w-4 sm:h-5 sm:w-5 text-[#F88B42]" />
                     </motion.span>
                   ))}
                 </div>

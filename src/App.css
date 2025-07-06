@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Magilio';
-  src: url('/Fonts/Magilio DEMO.ttf') format('truetype');
+  src: url('/Fonts/Magilio.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +42,7 @@
 }
 
 .font-magilio {
-  font-family: 'Magilio', cursive;
+  font-family: 'Magilio', cursive !important;
 }
 
 body {
