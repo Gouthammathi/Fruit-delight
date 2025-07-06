@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaLeaf, FaCarrot, FaSeedling, FaStar, FaTruck, FaClock, FaCalendarAlt, FaGift, FaShieldAlt } from 'react-icons/fa';
-import quotebggg from '../assets/leaves/quotebggg.png';
-
+import plan1 from '../assets/plan1.jpg';
+import plan2 from '../assets/plan2.jpg';
 const SubscriptionPlans = () => {
   const [isMonthly, setIsMonthly] = useState(true);
 
@@ -13,7 +13,7 @@ const SubscriptionPlans = () => {
       dailyPrice: '₹83/day',
       originalPrice: '₹3000',
       savings: '₹501',
-      image: 'src/assets/plan1.jpg', // Placeholder for image
+      image: plan1,
       features: [
         '4 Types of Fresh Fruits',
         '2 Types of Organic Sprouts', 
@@ -35,7 +35,7 @@ const SubscriptionPlans = () => {
       dailyPrice: '₹100/day',
       originalPrice: '₹3600',
       savings: '₹601',
-      image: 'src/assets/plan2.jpg', // Placeholder for image
+      image: plan2,
       features: [
         '4 Types of Fresh Fruits',
         '2 Types of Organic Sprouts',
