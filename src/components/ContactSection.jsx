@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import quotebggg from '../assets/leaves/quotebggg.png';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -31,8 +32,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-background relative quotebggg-section overflow-hidden">
+      {/* Overlay for readability if needed */}
+      <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 lg:gap-16">
           {/* Left side: Info */}
           <motion.div

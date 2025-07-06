@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaLeaf, FaCarrot, FaSeedling, FaStar, FaTruck, FaClock, FaCalendarAlt, FaGift, FaShieldAlt } from 'react-icons/fa';
+import quotebggg from '../assets/leaves/quotebggg.png';
 
 const SubscriptionPlans = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -55,8 +56,10 @@ const SubscriptionPlans = () => {
   ];
 
   return (
-    <section id="plans" className="py-12 sm:py-24 bg-background w-full">
-      <div className="px-0 sm:px-0 lg:px-0 w-full">
+    <section id="plans" className="py-12 sm:py-24 bg-background w-full relative overflow-hidden quotebggg-section">
+      {/* Overlay for readability if needed */}
+      <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
+      <div className="px-0 sm:px-0 lg:px-0 w-full relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-brand text-3xl sm:text-4xl md:text-5xl font-bold text-[#FEF8DE] mb-4">

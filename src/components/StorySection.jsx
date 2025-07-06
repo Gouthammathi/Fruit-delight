@@ -1,13 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLeaf, FaHeart, FaUsers, FaStar } from 'react-icons/fa';
+import quotebggg from '../assets/leaves/quotebggg.png';
 
 // Import a high-quality, relevant image for the story section
 
 const StorySection = () => {
   return (
-    <section id="story" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="story" className="py-24 bg-background relative overflow-hidden quotebggg-section">
+      {/* Overlay for readability if needed */}
+      <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 lg:gap-24 lg:items-center">
           {/* Left Side: Image */}
           {/* Removed image container */}

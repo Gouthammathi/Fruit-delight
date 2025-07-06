@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLeaf, FaTruck, FaShieldAlt, FaUtensils, FaRecycle, FaStar } from 'react-icons/fa';
+import quotebggg from '../assets/leaves/quotebggg.png';
 
 const FeaturesSection = () => {
   const features = [
@@ -50,8 +51,13 @@ const FeaturesSection = () => {
   };
 
   return (
-    <section id="features" className="py-8 sm:py-24 bg-[#FDF8E1]">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <section
+      id="features"
+      className="py-8 sm:py-24 bg-[#FDF8E1] relative overflow-hidden quotebggg-section"
+    >
+      {/* Overlay for readability if needed */}
+      <div className="absolute inset-0 bg-[#FDF8E1]/60 z-0 pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <h2 className="font-brand text-2xl sm:text-4xl md:text-5xl font-bold text-[#13381A]">
             Why You'll Love Us

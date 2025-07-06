@@ -9,43 +9,52 @@ import deliveryAnim from '../assets/lottie/delivery.json';
 import enjoymentAnim from '../assets/lottie/enjoyment.json';
 import bgImg from '../assets/bg.jpg';
 
-const steps = [
-  {
+  const steps = [
+    {
     anim: sourcingAnim,
-    title: 'Sourcing',
+      title: 'Sourcing',
     subtitle: 'Partnering with Trusted Farms',
     description: 'We carefully select fruits from local orchards and sustainable farms, ensuring only the freshest and most flavorful produce makes it into your box. Our partners share our passion for quality and ethical farming.'
-  },
-  {
+    },
+    {
     anim: inspectionAnim,
-    title: 'Inspection',
+      title: 'Inspection',
     subtitle: 'Rigorous Quality Checks',
     description: 'Every fruit is hand-inspected for ripeness, color, and safety. Our team uses strict standards to guarantee that only the best fruits are chosen, so you get premium quality every time.'
-  },
-  {
+    },
+    {
     anim: cuttingAnim,
-    title: 'Cutting',
+      title: 'Cutting',
     subtitle: 'Expert Preparation',
     description: 'Our skilled team prepares and cuts the fruit with precision, maintaining hygiene and preserving natural flavors. Each piece is handled with care to ensure freshness and taste.'
-  },
-  {
+    },
+    {
     anim: packingAnim,
-    title: 'Packing',
+      title: 'Packing',
     subtitle: 'Eco-Friendly & Secure',
     description: 'Fruits are packed in eco-friendly, insulated boxes that keep them safe and fresh during transit. We use minimal plastic and focus on sustainability at every step.'
-  },
-  {
+    },
+    {
     anim: deliveryAnim,
-    title: 'Delivery',
+      title: 'Delivery',
     subtitle: 'Fast & Reliable',
     description: 'Our logistics partners ensure your fruit box is delivered quickly and safely to your doorstep, maintaining the cold chain and freshness throughout the journey.'
-  },
-  {
+    },
+    {
     anim: enjoymentAnim,
-    title: 'Enjoyment',
+      title: 'Enjoyment',
     subtitle: 'Unbox & Savor',
     description: 'Open your box to a burst of color and flavor! Enjoy your ready-to-eat, nutritious fruit selection with family and friends, knowing every bite is packed with care and goodness.'
   },
+];
+
+const stepEmojis = [
+  '🍏', // Sourcing
+  '🔍', // Inspection
+  '🔪', // Cutting
+  '🧊', // Packing
+  '🚚', // Delivery
+  '🍽️', // Enjoyment
 ];
 
 const FruitLifecycle = () => (
@@ -64,7 +73,7 @@ const FruitLifecycle = () => (
     <div className="max-w-3xl mx-auto px-4 relative z-10">
       <h2 className="font-brand text-3xl sm:text-5xl font-bold text-center text-[#194528] mb-4">
         Our Journey to Your Door 🍇🍊
-      </h2>
+          </h2>
       <p className="text-xl font-magilio  text-[#194528]/80 text-center mb-4 max-w-2xl mx-auto">
         From the sun-kissed orchards to your family's table, every fruit box is a story of freshness, care, and delight. We partner with passionate farmers, use sustainable practices, and ensure every step is handled with love and expertise. Discover how your fruit box is crafted for maximum taste, nutrition, and joy!
       </p>
@@ -72,19 +81,28 @@ const FruitLifecycle = () => (
       <div className="relative flex flex-col gap-16">
         {steps.map((step, idx) => (
           <div
-            key={step.title}
+                    key={step.title}
             className={`flex flex-col sm:flex-row items-center gap-6 sm:gap-10 ${idx % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} group`}
-          >
-            <div className="relative flex items-center justify-center">
+                  >
+                    <div className="relative flex items-center justify-center">
               <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-white flex items-center justify-center shadow-2xl ring-4 ring-[#FDF8E1] ring-offset-2 ring-offset-[#EEE5BA]">
                 <Lottie animationData={step.anim} loop={true} className="w-28 h-28 sm:w-36 sm:h-36 drop-shadow-lg" />
-              </div>
+                    </div>
             </div>
-            <div className="flex-1 bg-white/80 rounded-xl p-4 shadow group-hover:shadow-lg transition">
-              <h3 className="font-semibold text-lg text-[#194528]">{step.title}</h3>
-              <div className="text-[#194528] text-sm font-medium mb-1">{step.subtitle}</div>
-              <p className="text-[#194528]/80 text-sm">{step.description}</p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 40 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.5 }}
+              className="flex-1 bg-gradient-to-br from-[#FFFDE4]/90 to-[#FDF8E1]/80 rounded-2xl p-6 shadow-xl"
+            >
+              <h3 className="font-semibold text-2xl md:text-3xl text-[#194528] mb-1 flex items-center gap-2">
+                <span className="text-2xl md:text-3xl">{stepEmojis[idx]}</span>
+                {step.title}
+              </h3>
+              <div className="text-[#194528] text-base md:text-lg font-medium mb-2">{step.subtitle}</div>
+              <p className="text-[#194528]/80 text-base md:text-lg">{step.description}</p>
+            </motion.div>
           </div>
         ))}
       </div>
@@ -98,9 +116,9 @@ const FruitLifecycle = () => (
         >
           👉 See How We Do It
         </a>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 
 export default FruitLifecycle; 
