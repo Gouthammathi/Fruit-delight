@@ -56,7 +56,7 @@ const SubscriptionPlans = () => {
   ];
 
   return (
-    <section id="plans" className="py-12 sm:py-24 bg-background w-full relative overflow-hidden quotebggg-section">
+    <section id="plans" className="py-12 sm:py-24 bg-background w-full relative overflow-hidden quotebggg-section-plans">
       {/* Overlay for readability if needed */}
       <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
       <div className="px-0 sm:px-0 lg:px-0 w-full relative z-10">

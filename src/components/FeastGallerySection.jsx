@@ -67,8 +67,10 @@ const bentoCards = [
 ];
 
 const FeastGallerySection = () => (
-  <section id="feast-gallery" className="py-16 bg-[#EEE5BA]">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="feast-gallery" className="py-16 bg-[#EEE5BA] quotebggg-section relative overflow-hidden">
+    {/* Overlay for readability if needed */}
+    <div className="absolute inset-0 bg-[#EEE5BA]/60 z-0 pointer-events-none" />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="text-center mb-10">
         <h2 className="font-brand text-3xl sm:text-5xl font-bold text-[#194528] mb-2">A Feast for Your Eyes</h2>
         <p className="text-lg text-[#194528]/80 max-w-2xl mx-auto">Explore our vibrant, bento-inspired gallery of fresh fruit, fun, and flavor!</p>

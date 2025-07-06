@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6, .font-brand {
     -0.5px 0.5px #FDF8E1;
 }
 
-.quotebg-section::after {
+.quotebg-section::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6, .font-brand {
   background-repeat: repeat;
   background-size: contain;
   background-position: center;
-  opacity: 0.18;
+  opacity: 0.30;
   pointer-events: none;
 }
 
@@ -105,6 +105,19 @@ h1, h2, h3, h4, h5, h6, .font-brand {
   background-repeat: repeat;
   background-size: contain;
   background-position: center;
-  opacity: 0.13;
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.quotebggg-section-plans::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/src/assets/leaves/quotebggg.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.22;
   pointer-events: none;
 }

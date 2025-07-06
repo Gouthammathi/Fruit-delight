@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const CTASection = () => (
-  <section className="py-10 bg-gradient-to-r from-primary via-secondary to-accent/20">
-    <div className="max-w-3xl mx-auto px-4 flex flex-col items-center text-center">
+  <section className="py-10 bg-gradient-to-r from-primary via-secondary to-accent/20 quotebggg-section relative overflow-hidden">
+    {/* Overlay for readability if needed */}
+    <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
+    <div className="max-w-3xl mx-auto px-4 flex flex-col items-center text-center relative z-10">
       <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6 drop-shadow-lg font-brand">
         Ready to switch to guilt-free snacking?
       </h3>

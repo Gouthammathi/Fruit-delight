@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaApple, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { FaFacebook,  FaInstagram, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: FaInstagram, href: '#' },
+    { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/fruitdelight01?igsh=MjZuOXgwMGplc3M0' },
     { name: 'WhatsApp', icon: FaWhatsapp, href: 'https://wa.me/918712220453' },
     { name: 'Facebook', icon: FaFacebook, href: '#' },
   ];
@@ -37,9 +37,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center justify-center bg-[#18492B] rounded-full p-2 shadow-md transition-all duration-300">
-                <FaApple className="h-8 w-8 text-accent" />
-              </span>
+              
               <span className="font-brand text-2xl font-bold text-[#13381A]">
                 Fruit Delight
               </span>
