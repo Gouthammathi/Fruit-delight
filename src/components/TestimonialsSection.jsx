@@ -162,7 +162,7 @@ const TestimonialsSection = () => {
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
-                  viewport={{ once: true, amount: 0.5 }}
+                  viewport={{ once: true, amount: 0.5 }} 
                   className={`relative bg-white/90 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col items-center pt-0 pb-6 sm:pb-8 px-2 sm:px-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 border-t-8 border-orange-400 w-full ${cardsPerView === 1 ? 'max-w-full' : 'max-w-xs sm:max-w-sm'} mx-auto flex-shrink-0 min-h-[420px] mt-12 mb-8 origin-center`}
                   style={{ width: cardsPerView === 1 ? '100%' : `calc((100% - ${(cardsPerView - 1) * 2}rem) / ${cardsPerView})` }}
                 >
