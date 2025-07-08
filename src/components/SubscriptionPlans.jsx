@@ -133,13 +133,24 @@ const SubscriptionPlans = () => {
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full py-3 px-6 bg-[#194528] text-[#FDF8E1] font-semibold rounded-lg transition-all duration-300 hover:bg-[#13381A] mt-auto"
+                <a
+                  href={`https://wa.me/918712220453?text=${encodeURIComponent(
+                    `Hello! I'm interested in the following plan:%0A` +
+                    `Plan: ${plan.name}%0A` +
+                    `Description: Select a plan that fits your lifestyle. Freshness delivered daily, with a holiday on Sundays.%0A` +
+                    `Price: ${plan.price} per month%0A` +
+                    `Daily Price: ${plan.dailyPrice}%0A` +
+                    `Savings: ${plan.savings}%0A` +
+                    `Original Price: ${plan.originalPrice}%0A` +
+                    `Features:%0A- ${plan.features.join('%0A- ')}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-6 bg-[#194528] text-[#FDF8E1] font-semibold rounded-lg transition-all duration-300 hover:bg-[#13381A] mt-auto flex items-center justify-center text-center"
+                  style={{ textDecoration: 'none' }}
                 >
                   {plan.cta}
-                </motion.button>
+                </a>
               </div>
             </motion.div>
           ))}
