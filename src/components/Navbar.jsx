@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaApple, FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -133,7 +134,7 @@ const Navbar = () => {
           className="flex-shrink-0 flex items-center gap-2 cursor-pointer select-none hover:scale-105 transition-transform duration-200"
           onClick={() => scrollToSection('home')}
         >
-          <img src="src\assets\logo.png" alt="Fruit Delight Logo" className="h-8 w-8 object-contain" style={{marginRight: '0.5rem'}} />
+          <img src={logo} alt="Fruit Delight Logo" className="h-8 w-8 object-contain" style={{marginRight: '0.5rem'}} />
           <span
             className={`font-brand text-xl font-bold drop-shadow-sm transition-colors duration-500 ${textColor}`}
             style={{ fontFamily: "'Thesla Ohago', Magilio, Pacifico, Quicksand, Poppins, cursive, sans-serif" }}

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaQuoteLeft } from 'react-icons/fa';
-import textBg from '../assets/textbg.jpg';
 import leafss from '../assets/leaves/leafss.png';
-import quotebg from '../assets/leaves/quotebg.png';
-import plan1 from '../assets/plan1.jpg';
-
+import logo from '../assets/logo.png';
 const QUOTES = [
   "From farm to table, we ensure every fruit tells a story of freshness and care.",
   "A box of fruit, a box of happiness—delivered fresh to your door.",
@@ -38,7 +34,7 @@ const QuoteSection = () => {
       <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="text-center mb-2">
           <span className="inline-flex items-center justify-center gap-2">
-            <img src="src/assets/logo.png" alt="Fruit Delight Logo" className="h-10 w-10 xs:h-12 xs:w-12 md:h-16 md:w-16 object-contain" style={{marginRight: '0.5rem'}} />
+            <img src={logo} alt="Fruit Delight Logo" className="h-10 w-10 xs:h-12 xs:w-12 md:h-16 md:w-16 object-contain" style={{marginRight: '0.5rem'}} />
             <span
               className="font-thanks-autumn text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold text-[#D6DC64] drop-shadow-lg tracking-wide text-outline-white"
               style={{
