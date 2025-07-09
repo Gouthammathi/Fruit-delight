@@ -53,6 +53,28 @@ const SubscriptionPlans = () => {
       color: 'bg-orange-50',
       borderColor: 'border-orange-200',
     },
+    {
+      name: 'Custom Plan',
+      price: 'Custom',
+      dailyPrice: '',
+      originalPrice: '',
+      savings: '',
+      image: plan1,
+      features: [
+        'Choose your favorite fruits',
+        'Flexible box size',
+        'Personalized delivery schedule',
+        'Perfect for unique preferences',
+        'Free Home Delivery',
+        'Morning Delivery (6-10 AM)',
+      ],
+      icon: FaGift,
+      cta: 'Build Your Box',
+      popular: false,
+      color: 'bg-[#FDF8E1]',
+      borderColor: 'border-[#F88B42]',
+      textColor: 'text-[#194528]',
+    },
   ];
 
   return (
@@ -71,7 +93,7 @@ const SubscriptionPlans = () => {
         </div>
 
         {/* Plans Grid */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 items-stretch px-4 place-items-center">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 items-stretch px-4 place-items-center">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -79,7 +101,10 @@ const SubscriptionPlans = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative rounded-2xl overflow-hidden border ring-2 ring-[#194528] shadow-xl transition-all duration-300 hover:shadow-xl flex flex-col h-full max-w-lg w-full bg-white"
+              className={`relative rounded-2xl overflow-hidden border ring-2 ring-[#194528] shadow-xl transition-all duration-300 hover:shadow-xl flex flex-col h-full max-w-lg w-full bg-white
+                ${index === 1 ? 'z-20 scale-105 shadow-2xl ring-4 ring-[#F88B42] md:-translate-y-4' : 'z-10'}
+              `}
+              style={index === 1 ? { position: 'relative' } : {}}
             >
               {/* Image Section */}
               <div className="h-48 bg-gradient-to-br from-[#194528]/10 to-[#194528]/5 relative">

@@ -31,7 +31,7 @@ const QuoteSection = () => {
       <img src={leafss} alt="leaves left" className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 h-80 z-0 pointer-events-none select-none" style={{objectFit: 'contain'}} />
       {/* Decorative leaves right (mirrored, centered vertically) */}
       <img src={leafss} alt="leaves right" className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 h-80 z-0 pointer-events-none select-none transform scale-x-[-1]" style={{objectFit: 'contain'}} />
-      <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="text-center mb-2">
           <span className="inline-flex items-center justify-center gap-2">
             <img src={logo} alt="Fruit Delight Logo" className="h-10 w-10 xs:h-12 xs:w-12 md:h-16 md:w-16 object-contain" style={{marginRight: '0.5rem'}} />

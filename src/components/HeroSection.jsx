@@ -98,7 +98,7 @@ const HeroSection = () => {
       />
 
       {/* Floating Badges/Assets */}
-      <img src={healthyFood} alt="Healthy Food" className="absolute top-100 left-1/4 w-16 sm:w-28 rotate-[-20deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} />
+      {/* <img src={healthyFood} alt="Healthy Food" className="absolute top-60 left-1/3 w-16 sm:w-28 rotate-[-20deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} /> */}
       {/* <img src={farmFresh} alt="Farm Fresh" className="absolute top-[30%] left-[20%] w-16 sm:w-32 rotate-[-8deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} /> */}
       <img src={quickDelivery} alt="Quick Delivery" className="absolute top-1/2 right-1/4 w-16 sm:w-28 rotate-[10deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} />
 
@@ -149,15 +149,21 @@ const HeroSection = () => {
               Enjoy a healthier life with <br/><span className="font-magilio text-[#F88B42] drop-shadow-md text-outline-cream">Nutrient-Rich, Freshly-Cut</span> <br/>Fruit Boxes.
             </p>
             <div className="mt-8 flex justify-center">
-              <a 
-                href="#plans" 
+              <button
+                type="button"
+                onClick={() => {
+                  const plansSection = document.getElementById('plans');
+                  if (plansSection) {
+                    plansSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-[#FDF8E1] font-semibold px-8 py-3 rounded-full shadow-md border border-orange-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 group text-base"
               >
                 Order Now
                 <span className="inline-flex items-center justify-center bg-[#FDF8E1] rounded-full p-1 ml-1 shadow-sm transition-all duration-300 group-hover:bg-orange-100">
                   <FaArrowRight className="h-5 w-5 text-orange-500 group-hover:text-orange-600 transition-all duration-300" />
                 </span>
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>

@@ -106,16 +106,16 @@ const FruitLifecycle = () => (
           </div>
         ))}
       </div>
-      <div className="mt-12 text-center text-[#194528] text-lg font-medium mb-4">
+      <div className="mt-12 font-thanks-autumn text-center text-[#194528] text-lg font-medium mb-4">
         Every box is a promise: farm-fresh, hand-checked, and delivered with a smile. Taste the difference in every bite!
       </div>
       <div className="flex justify-center mt-2">
-        <a
+        {/* <a
           href="/how-we-do-it"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#194528] text-[#FDF8E1] rounded-full font-semibold shadow hover:bg-[#2a6a3b] transition"
         >
           👉 See How We Do It
-        </a>
+        </a> */}
         </div>
       </div>
     </section>

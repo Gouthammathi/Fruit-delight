@@ -44,9 +44,9 @@ const Navbar = () => {
       const scrollPosition = window.scrollY;
       let newContentBgColor = '#194E2E'; // Default dark green
       if (isHomePage) {
-        const sections = ['home', 'features', 'plans', 'lifecycle', 'benefits', 'gallery', 'story', 'testimonials', 'contact'];
+        const sections = ['home', 'features', 'plans', 'bulk-orders', 'lifecycle', 'benefits', 'gallery', 'story', 'testimonials', 'contact'];
         const lightSections = ['contact'];
-        const darkTextSections = ['features', 'lifecycle', 'benefits', 'testimonials'];
+        const darkTextSections = ['features', 'lifecycle', 'benefits', 'testimonials', 'bulk-orders'];
         for (let i = sections.length - 1; i >= 0; i--) {
           const element = document.getElementById(sections[i]);
           if (element && element.offsetTop <= scrollPosition + 100) {

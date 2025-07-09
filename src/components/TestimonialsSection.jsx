@@ -163,12 +163,12 @@ const TestimonialsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
                   viewport={{ once: true, amount: 0.5 }} 
-                  className={`relative bg-white/90 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col items-center pt-0 pb-6 sm:pb-8 px-2 sm:px-6 hover:scale-105 hover:shadow-2xl transition-all duration-300 border-t-8 border-orange-400 w-full ${cardsPerView === 1 ? 'max-w-full' : 'max-w-xs sm:max-w-sm'} mx-auto flex-shrink-0 min-h-[420px] mt-12 mb-8 origin-center`}
+                  className={`relative bg-white/95 rounded-3xl shadow-lg flex flex-col items-center pt-0 pb-12 px-4 sm:px-8 hover:scale-105 hover:shadow-2xl transition-all duration-500 w-full ${cardsPerView === 1 ? 'max-w-full' : 'max-w-xs sm:max-w-sm'} mx-auto flex-shrink-0 min-h-[400px] mt-12 mb-8 origin-center border border-[#f3e9d7]`}
                   style={{ width: cardsPerView === 1 ? '100%' : `calc((100% - ${(cardsPerView - 1) * 2}rem) / ${cardsPerView})` }}
                 >
                   {/* Gradient ring avatar */}
                   <div className="relative -top-8 sm:-top-10 mb-2">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-tr from-[#F88B42] via-[#D6DC64] to-[#194528] p-1 shadow-lg">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-[#FDF8E1] p-1 shadow-md border border-[#F88B42]/10">
                       <div className="w-full h-full rounded-full overflow-hidden bg-white">
                         <img src={testimonial.image} alt={testimonial.name + ' avatar'} className="w-full h-full object-cover" />
                       </div>
@@ -179,12 +179,12 @@ const TestimonialsSection = () => {
                     initial={{ rotate: -10 }}
                     animate={{ rotate: 0 }}
                     transition={{ type: 'spring', stiffness: 120, delay: 0.3 + index * 0.1 }}
-                    className="bg-[#F88B42]/90 rounded-full p-2 sm:p-3 shadow-md mb-3 sm:mb-4 -mt-4 flex items-center justify-center"
+                    className="bg-[#FDF8E1] rounded-full p-2 sm:p-3 shadow-sm mb-3 sm:mb-4 -mt-4 flex items-center justify-center"
                   >
-                    <FaQuoteLeft className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-white drop-shadow" />
+                    <FaQuoteLeft className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-[#F88B42] opacity-70" />
                   </motion.div>
                   {/* Quote */}
-                  <p className="text-base sm:text-lg text-[#194528] leading-relaxed mb-4 sm:mb-6 text-center font-medium italic">
+                  <p className="text-base sm:text-lg text-[#194528] leading-relaxed mb-4 sm:mb-6 text-center font-normal italic">
                     "{testimonial.quote}"
                   </p>
                   {/* Name, location, rating */}
@@ -200,7 +200,7 @@ const TestimonialsSection = () => {
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ delay: 0.5 + i * 0.1, type: 'spring', stiffness: 200 }}
-                          className="inline-flex items-center justify-center bg-[#D6DC64] rounded-full p-1 shadow-md"
+                          className="inline-flex items-center justify-center bg-[#D6DC64] rounded-full p-1 shadow-sm"
                         >
                           <FaStar className="h-4 w-4 sm:h-5 sm:w-5 text-[#F88B42]" />
                         </motion.span>
