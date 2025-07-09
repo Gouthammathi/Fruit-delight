@@ -57,7 +57,9 @@ const textItem = {
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen bg-background flex flex-col items-center justify-center pt-16 sm:pt-20 pb-4 sm:pb-8 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-background flex flex-col items-center justify-center pt-16 pb-4 overflow-hidden">
+      <div className="w-full flex justify-center items-center min-h-screen">
+        <div className="w-[900px] max-w-3xl min-h-[700px] rounded-2xl overflow-hidden shadow-lg bg-background flex flex-col justify-center mx-auto">
       {/* Noise Texture Overlay */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-20" style={{backgroundImage: 'url(https://www.transparenttextures.com/patterns/noise.png)'}} />
       {/* Spiral Burst Background */}
@@ -94,19 +96,14 @@ const HeroSection = () => {
         animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
       />
-      <motion.div
-        className="absolute bottom-0 right-0 w-40 h-40 sm:w-72 sm:h-72 bg-primary/10 rounded-full filter blur-3xl opacity-50"
-        animate={{ x: [0, -100, 0], y: [0, -50, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
-      />
 
       {/* Floating Badges/Assets */}
       <img src={healthyFood} alt="Healthy Food" className="absolute top-100 left-1/4 w-16 sm:w-28 rotate-[-20deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} />
       {/* <img src={farmFresh} alt="Farm Fresh" className="absolute top-[30%] left-[20%] w-16 sm:w-32 rotate-[-8deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} /> */}
       <img src={quickDelivery} alt="Quick Delivery" className="absolute top-1/2 right-1/4 w-16 sm:w-28 rotate-[10deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+      <div className="max-w-3xl mx-auto px-8 z-10 w-full">
+        <div className="flex flex-col items-center justify-center w-full h-full">
           {/* Left Column: Text Content */}
           <motion.div
             className="flex flex-col items-center justify-center col-span-2 relative"
@@ -116,7 +113,7 @@ const HeroSection = () => {
           >
             {/* Large Fresh text above the image */}
             <motion.h1
-              className="text-xl xs:text-2xl sm:text-4xl md:text-6xl lg:text-9xl font-extrabold text-center mt-2 sm:mt-4 font-thanks-autumn relative inline-block"
+              className="text-6xl font-extrabold text-center mt-4 font-thanks-autumn relative inline-block"
               style={{ color: '#D7E455', zIndex: 30 }}
               variants={textItem}
             >
@@ -132,7 +129,7 @@ const HeroSection = () => {
               </span>
             </motion.h1>
             <motion.p
-              className="text-base sm:text-4xl font-semibold text-center text-[#FDF8E1] mt-2 mb-2 font-sunshine text-outline-orange"
+              className="text-4xl font-semibold text-center text-[#FDF8E1] mt-2 mb-2 font-sunshine text-outline-orange"
               variants={textItem}
             >
               Starts  Here
@@ -142,27 +139,29 @@ const HeroSection = () => {
               <motion.img
                 src={heroImage}
                 alt="Fruit Bowl"
-                className="w-40 xs:w-56 sm:w-80 md:w-[22rem] xl:w-[30rem] h-auto object-contain z-20 drop-shadow-2xl"
+                className="w-[22rem] h-auto object-contain z-20 drop-shadow-2xl"
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
               />
             </div>
             {/* Subheading below everything */}
-            <p className="mt-8 sm:mt-16 text-base xs:text-lg sm:text-4xl font-thanks-autumn text-[#D6DC64] tracking-wide drop-shadow-lg max-w-xs sm:max-w-xl mx-auto text-center">
+            <p className="mt-8 text-4xl font-thanks-autumn text-[#D6DC64] tracking-wide drop-shadow-lg max-w-xl mx-auto text-center">
               Enjoy a healthier life with <br/><span className="font-magilio text-[#F88B42] drop-shadow-md text-outline-cream">Nutrient-Rich, Freshly-Cut</span> <br/>Fruit Boxes.
             </p>
-            <div className="mt-6 sm:mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center">
               <a 
                 href="#plans" 
-                className="inline-flex items-center gap-2 sm:gap-3 bg-orange-500 hover:bg-orange-600 text-[#FDF8E1] font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-full shadow-md border border-orange-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 group text-sm sm:text-base"
+                className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-[#FDF8E1] font-semibold px-8 py-3 rounded-full shadow-md border border-orange-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 group text-base"
               >
                 Order Now
                 <span className="inline-flex items-center justify-center bg-[#FDF8E1] rounded-full p-1 ml-1 shadow-sm transition-all duration-300 group-hover:bg-orange-100">
-                  <FaArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 group-hover:text-orange-600 transition-all duration-300" />
+                  <FaArrowRight className="h-5 w-5 text-orange-500 group-hover:text-orange-600 transition-all duration-300" />
                 </span>
               </a>
             </div>
           </motion.div>
+        </div>
+      </div>
         </div>
       </div>
     </section>

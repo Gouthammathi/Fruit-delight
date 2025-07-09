@@ -39,62 +39,37 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      
-      // Determine content background color based on scroll position and current page
+      // Only update background color, not visibility
       const scrollPosition = window.scrollY;
       let newContentBgColor = '#194E2E'; // Default dark green
-      
       if (isHomePage) {
-        // On home page, check which section we're over
         const sections = ['home', 'features', 'plans', 'lifecycle', 'benefits', 'gallery', 'story', 'testimonials', 'contact'];
-        const lightSections = ['contact']; // Sections with light background
-        const darkTextSections = ['features', 'lifecycle', 'benefits', 'testimonials']; // Sections where text should be dark
-        
+        const lightSections = ['contact'];
+        const darkTextSections = ['features', 'lifecycle', 'benefits', 'testimonials'];
         for (let i = sections.length - 1; i >= 0; i--) {
           const element = document.getElementById(sections[i]);
           if (element && element.offsetTop <= scrollPosition + 100) {
             if (lightSections.includes(sections[i])) {
-              newContentBgColor = '#FDF8E1'; // Light beige background
+              newContentBgColor = '#FDF8E1';
             } else if (darkTextSections.includes(sections[i])) {
-              newContentBgColor = '#194528'; // Dark green for sections with dark text
+              newContentBgColor = '#194528';
             } else {
-              newContentBgColor = '#194E2E'; // Dark green background
+              newContentBgColor = '#194E2E';
             }
             break;
           }
         }
       } else {
-        // On other pages, always light background
         newContentBgColor = '#FDF8E1';
       }
-      
       setContentBgColor(newContentBgColor);
     };
-    
-    // Throttled scroll handler for header visibility
-    let ticking = false;
-    const throttledScrollHandler = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          debouncedScrollHandler();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('scroll', throttledScrollHandler);
-    
-    // Initial call to set correct color
     handleScroll();
-    
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('scroll', throttledScrollHandler);
     };
-  }, [isHomePage, debouncedScrollHandler]);
+  }, [isHomePage]);
 
   // Determine text color based on content background
   const getTextColor = () => {
@@ -130,14 +105,10 @@ const Navbar = () => {
   };
 
   const navClasses = `
-    fixed top-3 left-1/2 z-50 w-4/5 max-w-8xl -translate-x-1/2 
-    rounded-2xl px-3 py-1 
+    fixed top-3 left-1/2 z-50 w-4/5 max-w-8xl -translate-x-1/2
+    rounded-2xl px-3 py-1
     border transition-all duration-300 ease-in-out bg-transparent
-    ${isScrolled || isOpen 
-      ? 'backdrop-blur-lg border-white/20 shadow-lg scale-105 ring-2 ring-accent/10' 
-      : 'border-transparent shadow-glass'}
-    ${isOpen ? 'rounded-b-l' : ''}
-    ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+    backdrop-blur-lg border-white/20 shadow-lg
   `;
 
   const mobileMenuClasses = `
@@ -162,6 +133,7 @@ const Navbar = () => {
           className="flex-shrink-0 flex items-center gap-2 cursor-pointer select-none hover:scale-105 transition-transform duration-200"
           onClick={() => scrollToSection('home')}
         >
+          <img src="src\assets\logo.png" alt="Fruit Delight Logo" className="h-8 w-8 object-contain" style={{marginRight: '0.5rem'}} />
           <span
             className={`font-brand text-xl font-bold drop-shadow-sm transition-colors duration-500 ${textColor}`}
             style={{ fontFamily: "'Thesla Ohago', Magilio, Pacifico, Quicksand, Poppins, cursive, sans-serif" }}

@@ -37,25 +37,22 @@ const QuoteSection = () => {
       <img src={leafss} alt="leaves right" className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 h-80 z-0 pointer-events-none select-none transform scale-x-[-1]" style={{objectFit: 'contain'}} />
       <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="text-center mb-2">
-          <span
-            className="font-thanks-autumn text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold text-[#D6DC64] drop-shadow-lg tracking-wide text-outline-white"
-            style={{
-              textShadow: '0 2px 8px rgba(0,0,0,0.18)',
-            }}
-          >
-            Fruit Delight
+          <span className="inline-flex items-center justify-center gap-2">
+            <img src="src/assets/logo.png" alt="Fruit Delight Logo" className="h-10 w-10 xs:h-12 xs:w-12 md:h-16 md:w-16 object-contain" style={{marginRight: '0.5rem'}} />
+            <span
+              className="font-thanks-autumn text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold text-[#D6DC64] drop-shadow-lg tracking-wide text-outline-white"
+              style={{
+                textShadow: '0 2px 8px rgba(0,0,0,0.18)',
+              }}
+            >
+              Fruit Delight
+            </span>
           </span>
         </div>
         <div className="text-center flex flex-col justify-center h-full w-full">
           <span
-            className="inline-block text-4xl xs:text-5xl md:text-6xl mb-4 sm:mb-6 font-bold bg-clip-text text-transparent text-outline-cream drop-shadow-lg"
+            className="inline-block text-4xl xs:text-5xl md:text-6xl mb-4 sm:mb-6 font-bold text-[#FDF8E1] text-outline-cream drop-shadow-lg"
             style={{
-              backgroundImage: `url(${textBg})`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
               textShadow: '0 2px 8px rgba(0,0,0,0.18)',
             }}
           >
@@ -68,14 +65,8 @@ const QuoteSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              className="font-brand text-xl xs:text-2xl sm:text-3xl md:text-4xl font-medium leading-tight bg-clip-text text-transparent text-outline-cream drop-shadow-lg mx-auto max-w-xs sm:max-w-2xl"
+              className="font-brand text-xl xs:text-2xl sm:text-3xl md:text-4xl font-medium leading-tight text-[#FDF8E1] text-outline-cream drop-shadow-lg mx-auto max-w-xs sm:max-w-2xl"
               style={{
-                backgroundImage: `url(${textBg})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
                 textShadow: '0 2px 8px rgba(0,0,0,0.18)',
               }}
             >
