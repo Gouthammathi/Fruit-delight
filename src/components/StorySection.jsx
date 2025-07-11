@@ -9,7 +9,8 @@ const StorySection = () => {
   return (
     <section id="story" className="py-24 bg-background relative overflow-hidden quotebggg-section">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10" style={{ color: '#FDF8E1' }}>
-        A note from our founder.
+        A note from our founder
+
       </h2>
       {/* Overlay for readability if needed */}
       <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
