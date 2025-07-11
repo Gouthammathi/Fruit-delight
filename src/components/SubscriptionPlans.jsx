@@ -160,14 +160,14 @@ const SubscriptionPlans = () => {
                 {/* CTA Button */}
                 <a
                   href={`https://wa.me/918712220453?text=${encodeURIComponent(
-                    `Plan Details:%0A` +
-                    `Name: ${plan.name}%0A` +
-                    `Description: Select a plan that fits your lifestyle. Freshness delivered daily, with a holiday on Sundays.%0A` +
-                    `Price: ${plan.price}/month%0A` +
-                    `Daily Price: ${plan.dailyPrice}%0A` +
-                    `Savings: ${plan.savings}%0A` +
-                    `Original Price: ${plan.originalPrice}%0A` +
-                    `Features:%0A- ${plan.features.join('%0A- ')}`
+                    `Plan Details\n` +
+                    `Name: ${plan.name}\n` +
+                    `Description: Select a plan that fits your lifestyle. Freshness delivered daily, with a holiday on Sundays.\n` +
+                    `Price: ${plan.price}/month\n` +
+                    `Daily Price: ${plan.dailyPrice}\n` +
+                    `Savings: ${plan.savings}\n` +
+                    `Original Price: ${plan.originalPrice}\n` +
+                    `Features:\n${plan.features.map(f => '- ' + f).join('\n')}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
