@@ -1,58 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLeaf, FaHeart, FaUsers, FaStar } from 'react-icons/fa';
-import quotebggg from '../assets/leaves/quotebggg.png';
+import avatar from '../assets/avatar.jpg';
 
 // Import a high-quality, relevant image for the story section
 
 const StorySection = () => {
   return (
     <section id="story" className="py-24 bg-background relative overflow-hidden quotebggg-section">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10" style={{ color: '#FDF8E1' }}>
+        A note from our founder.
+      </h2>
       {/* Overlay for readability if needed */}
       <div className="absolute inset-0 bg-background/90 z-0 pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 lg:gap-24 lg:items-center">
-          {/* Left Side: Image */}
-          {/* Removed image container */}
-
-          {/* Right Side: Content */}
-          <motion.div
-            className="mt-12 lg:mt-0 lg:col-span-2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <h2 className="font-brand text-4xl md:text-5xl font-bold text-primary" style={{ color: '#FDF8E1' }}>
-              Our Passion for Freshness
-            </h2>
-            <p className="mt-4 text-lg text-[#FDF8E1] leading-relaxed">
-              It all began with a simple idea: make healthy eating easy and delightful. We saw that people loved fresh fruit but lacked the time for the daily chore of washing, cutting, and preparing.
-            </p>
-            <p className="mt-4 text-lg text-[#FDF8E1] leading-relaxed">
-              Today, we're a passionate team dedicated to delivering that "just-cut" freshness right to your door, making nutritious choices an effortless part of your day.
-            </p>
-
-            {/* Values */}
-            <div className="mt-8 grid grid-cols-2 gap-6 text-[#FDF8E1]">
-              <div className="flex items-center gap-3">
-                <FaLeaf className="h-6 w-6 text-[#FDF8E1]" />
-                <span className="font-bold text-primary">Quality First</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaHeart className="h-6 w-6 text-accent" />
-                <span className="font-bold text-primary">Customer Love</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaUsers className="h-6 w-6 text-accent" />
-                <span className="font-bold text-primary">Community Focused</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaStar className="h-6 w-6 text-accent" />
-                <span className="font-bold text-primary">Daily Excellence</span>
-              </div>
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-8 lg:px-16 relative z-10">
+        <div className="w-full flex flex-col lg:flex-row items-center gap-12 rounded-3xl border border-white/40 backdrop-blur-md bg-white/10 p-6 sm:p-10 lg:p-16">
+          {/* Left Side: Image Card */}
+          <div className="flex-shrink-0 w-full max-w-sm flex justify-center items-center">
+            <div className="bg-white rounded-2xl p-2 flex items-center justify-center" style={{ boxShadow: '0 2px 24px 0 rgba(0,0,0,0.04)' }}>
+              <img
+                src={avatar}
+                alt="Anjaneyulu - Founder"
+                className="rounded-2xl w-full h-auto object-cover"
+                style={{ aspectRatio: '3/4', maxHeight: '420px' }}
+              />
             </div>
-          </motion.div>
+          </div>
+          {/* Right Side: Content */}
+          <div className="flex-1 flex flex-col justify-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#FDF8E1' }}>
+              Meet Mr. Anjaneyulu, founder
+            </h3>
+            <p className="text-base md:text-lg mb-6" style={{ color: '#FDF8E1' }}>
+              Hi, I'm Anjaneyulu, a working software engineer at a top MNC. My journey with fruits began out of pure passion and a deep understanding of their nutritional values. Inspired by the desire to make healthy living accessible, I started Fruit Delight to deliver the freshest, most hygienic fruit experiences to your doorstep.<br/><br/>
+              Every box is packed with care, ensuring quality and cleanliness at every step. Join me in celebrating the joy of fresh fruits, and let’s make healthy choices simple, delightful, and part of every day!
+            </p>
+            <div className="mt-6">
+              <div className="font-bold" style={{ color: '#FDF8E1' }}>Anjaneyulu, Founder & CEO</div>
+              {/* Optionally, add a signature image or stylized signature font here */}
+            </div>
+          </div>
         </div>
       </div>
     </section>
