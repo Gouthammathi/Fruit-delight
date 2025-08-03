@@ -31,68 +31,103 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#FDF8E1] border-t border-neutral-light pt-8 pb-4 sm:pt-12 sm:pb-8">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-6 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
-          {/* Company Info */}
-          <div className="col-span-2 lg:col-span-2">
-            <div className="flex items-center gap-2">
-              
-              <span className="font-brand text-2xl font-bold text-[#13381A]">
-                Fruit Delight
-              </span>
-            </div>
-            <p className="mt-4 text-[#13381A]/80 max-w-xs">
-              Healthy Bites, Happy Life. Freshly cut fruit boxes, delivered to your doorstep.
-            </p>
-            <div className="mt-6 flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.name}
-                  className="w-10 h-10 bg-[#18492B] text-accent rounded-full flex items-center justify-center shadow-md transition-all duration-300"
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h3 className="font-bold text-[#13381A] uppercase tracking-wider text-sm">{title}</h3>
-              <ul className="mt-4 space-y-3">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-[#13381A]/80 hover:text-accent transition-colors"
-                      onClick={(e) => {
-                        if (link.href.startsWith('#')) {
-                          e.preventDefault();
-                          document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }}
-                    >
-                      {link.name}
-                    </a>
-                  </li>
+    <footer className="bg-[#FDF8E1] border-t border-neutral-light">
+      {/* Main Footer Content */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-12">
+            {/* Company Info */}
+            <div className="col-span-2 lg:col-span-2">
+              <div className="flex items-center gap-3">
+                <span className="font-brand text-3xl sm:text-4xl font-bold text-[#13381A]">
+                  Fruit Delight
+                </span>
+              </div>
+              <p className="mt-6 text-[#13381A]/80 max-w-md leading-relaxed">
+                Healthy Bites, Happy Life. Freshly cut fruit boxes, delivered to your doorstep with love and care.
+              </p>
+              <div className="mt-8 flex gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="w-12 h-12 bg-[#18492B] text-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-[#194528]"
+                  >
+                    <social.icon className="h-6 w-6" />
+                  </a>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
-        </div>
 
-        <div className="mt-16 border-t border-neutral-light pt-10 flex flex-col items-center justify-center text-center gap-3">
-          <p className="text-base font-semibold text-[#13381A]/90">&copy; 2025 Nihira Enterprises. All Rights Reserved.</p>
-          <div className="flex gap-4 mt-2 text-sm justify-center items-center">
-            <a href="#" className="text-[#13381A]/80 hover:text-accent">Privacy Policy</a>
-            <span className="h-4 border-l border-[#13381A]/30"></span>
-            <a href="#" className="text-[#13381A]/80 hover:text-accent">Terms of Service</a>
+            {/* Links */}
+            {Object.entries(footerLinks).map(([title, links]) => (
+              <div key={title}>
+                <h3 className="font-bold text-[#13381A] uppercase tracking-wider text-sm mb-6">{title}</h3>
+                <ul className="space-y-4">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <a
+                        href={link.href}
+                        className="text-[#13381A]/80 hover:text-accent transition-colors duration-300 font-medium"
+                        onClick={(e) => {
+                          if (link.href.startsWith('#')) {
+                            e.preventDefault();
+                            document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Section - 100% Width */}
+      <div className="w-full bg-[#194528]/5 border-t border-[#194528]/10">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              {/* Copyright */}
+              <div className="text-center lg:text-left">
+                <p className="text-base font-semibold text-[#13381A]/90">
+                  &copy; 2025 Nihira Enterprises. All Rights Reserved.
+                </p>
+              </div>
+
+              {/* Links and Credit */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+                {/* Policy Links */}
+                <div className="flex gap-6 text-sm">
+                  <a href="#" className="text-[#13381A]/80 hover:text-accent transition-colors duration-300 font-medium">
+                    Privacy Policy
+                  </a>
+                  <a href="#" className="text-[#13381A]/80 hover:text-accent transition-colors duration-300 font-medium">
+                    Terms of Service
+                  </a>
+                </div>
+
+                {/* Developer Credit */}
+                <div className="text-sm text-[#13381A]/70">
+                  Designed and developed with ❤️ by{' '}
+                  <a 
+                    href="https://gouthammathi.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#F88B42] hover:text-[#194528] font-semibold transition-colors duration-300 underline decoration-2 underline-offset-2"
+                  >
+                    Goutham Mathi
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

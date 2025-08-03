@@ -9,10 +9,10 @@ const SubscriptionPlans = () => {
   const plans = [
     {
       name: 'Basic Monthly Package',
-      price: '₹2499',
-      dailyPrice: '₹83/day',
-      originalPrice: '₹3000',
-      savings: '₹501',
+      price: '₹2,300',
+      dailyPrice: '₹77/day',
+      originalPrice: '2500',
+      savings: '200',
       image: plan1,
       features: [
         '4 Types of Fresh Fruits',
@@ -31,10 +31,10 @@ const SubscriptionPlans = () => {
     },
     {
       name: 'Premium Monthly Package',
-      price: '₹2999',
-      dailyPrice: '₹100/day',
-      originalPrice: '₹3600',
-      savings: '₹601',
+      price: '₹2,800',
+      dailyPrice: '₹93/day',
+      originalPrice: '3000',
+      savings: '200',
       image: plan2,
       features: [
         '4 Types of Fresh Fruits',
@@ -75,6 +75,30 @@ const SubscriptionPlans = () => {
       borderColor: 'border-[#F88B42]',
       textColor: 'text-[#194528]',
     },
+    {
+      name: 'Get a Demo Box',
+      price: 'FREE',
+      dailyPrice: 'One-time',
+      originalPrice: '',
+      savings: '₹200 Value',
+      image: plan1,
+      features: [
+        'Sample of our premium fruits',
+        '2-3 Types of Fresh Fruits',
+        '1 Type of Organic Sprouts',
+        'Perfect for first-time customers',
+        'Free Home Delivery',
+        'Morning Delivery (6-10 AM)',
+        'No commitment required',
+        'Experience our quality'
+      ],
+      icon: FaGift,
+      cta: 'Get Free Demo',
+      popular: false,
+      color: 'bg-purple-50',
+      borderColor: 'border-purple-200',
+      textColor: 'text-[#194528]',
+    },
   ];
 
   return (
@@ -93,7 +117,7 @@ const SubscriptionPlans = () => {
         </div>
 
         {/* Plans Grid */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 items-stretch px-4 place-items-center">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 items-stretch px-4 place-items-center">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -132,15 +156,26 @@ const SubscriptionPlans = () => {
                   {/* Pricing */}
                   <div className="flex items-baseline gap-2 mb-3">
                     <span className="text-3xl font-bold text-[#194528]">{plan.price}</span>
-                    <span className="text-[#194528]/70">/month</span>
+                    {plan.price !== 'FREE' && plan.price !== 'Custom' && (
+                      <span className="text-[#194528]/70">/month</span>
+                    )}
                   </div>
                   
-                  <div className="flex items-center gap-4 text-sm mb-2">
-                    <span className="text-[#194528]/80">Just {plan.dailyPrice}</span>
-                    <span className="text-green-600 font-semibold">Save ₹{plan.savings}</span>
-                  </div>
+                  {plan.dailyPrice && plan.dailyPrice !== 'One-time' && (
+                    <div className="flex items-center gap-4 text-sm mb-2">
+                      <span className="text-[#194528]/80">Just {plan.dailyPrice}</span>
+                      {plan.savings && plan.savings !== '₹200 Value' && (
+                        <span className="text-green-600 font-semibold">Save ₹{plan.savings}</span>
+                      )}
+                    </div>
+                  )}
                   
-                  <span className="text-[#194528]/60 line-through text-sm">₹{plan.originalPrice}</span>
+                  {plan.originalPrice && plan.originalPrice !== '' && (
+                    <div className="text-sm mb-2">
+                      <span className="text-[#194528]/60">Original Price: </span>
+                      <span className="text-[#194528]/60 line-through">₹{plan.originalPrice}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Features */}
@@ -160,18 +195,53 @@ const SubscriptionPlans = () => {
                 {/* CTA Button */}
                 <a
                   href={`https://wa.me/918712220453?text=${encodeURIComponent(
-                    `Plan Details\n` +
-                    `Name: ${plan.name}\n` +
-                    `Description: Select a plan that fits your lifestyle. Freshness delivered daily, with a holiday on Sundays.\n` +
-                    `Price: ${plan.price}/month\n` +
-                    `Daily Price: ${plan.dailyPrice}\n` +
-                    `Savings: ${plan.savings}\n` +
-                    `Original Price: ${plan.originalPrice}\n` +
-                    `Features:\n${plan.features.map(f => '- ' + f).join('\n')}`
+                    plan.name === 'Get a Demo Box' 
+                      ? `🍎 *Fruit Delight - Demo Box Request* 🍎
+
+Hi! I'm interested in trying your demo box.
+
+📦 *Demo Box Details:*
+• Sample of premium fruits
+• 2-3 Types of Fresh Fruits
+• 1 Type of Organic Sprouts
+• Perfect for first-time customers
+• Free Home Delivery
+• Morning Delivery (6-10 AM)
+• No commitment required
+• Experience your quality
+
+💰 *Value:* ₹200 (FREE for demo)
+
+📍 *Delivery:* Madeenaguda, Hyderabad area
+
+Please let me know how to proceed with the demo box order.
+
+---
+*Sent from Fruit Delight Website*
+*Time:* ${new Date().toLocaleString('en-IN', { 
+  timeZone: 'Asia/Kolkata',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+})}`
+                      : `Plan Details\n` +
+                        `Name: ${plan.name}\n` +
+                        `Description: Select a plan that fits your lifestyle. Freshness delivered daily, with a holiday on Sundays.\n` +
+                        `Price: ${plan.price}/month\n` +
+                        `Daily Price: ${plan.dailyPrice}\n` +
+                        `Savings: ${plan.savings}\n` +
+                        `Original Price: ${plan.originalPrice}\n` +
+                        `Features:\n${plan.features.map(f => '- ' + f).join('\n')}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 px-6 bg-[#194528] text-[#FDF8E1] font-semibold rounded-lg transition-all duration-300 hover:bg-[#13381A] mt-auto flex items-center justify-center text-center"
+                  className={`w-full py-3 px-6 font-semibold rounded-lg transition-all duration-300 mt-auto flex items-center justify-center text-center ${
+                    plan.name === 'Get a Demo Box' 
+                      ? 'bg-green-600 hover:bg-green-700 text-white' 
+                      : 'bg-[#194528] hover:bg-[#13381A] text-[#FDF8E1]'
+                  }`}
                   style={{ textDecoration: 'none' }}
                 >
                   {plan.cta}

@@ -18,9 +18,38 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message!');
+    
+    // Create structured WhatsApp message
+    const whatsappMessage = `🍎 *Fruit Delight - New Contact Message* 🍎
+
+👤 *Name:* ${formData.name}
+📧 *Email:* ${formData.email}
+📱 *Phone:* ${formData.phone || 'Not provided'}
+
+💬 *Message:*
+${formData.message}
+
+---
+*Sent from Fruit Delight Website*
+*Time:* ${new Date().toLocaleString('en-IN', { 
+  timeZone: 'Asia/Kolkata',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+})}`;
+
+    // Encode the message for WhatsApp URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Create WhatsApp URL with the phone number
+    const whatsappUrl = `https://wa.me/918712220453?text=${encodedMessage}`;
+    
+    // Open WhatsApp with the structured message
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -124,7 +153,7 @@ const ContactSection = () => {
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Your Phone (Optional)"
+                  placeholder="Phone Number"
                   className="w-full px-4 py-3 bg-background rounded-full border-2 border-[#194528] focus:ring-2 focus:ring-accent focus:border-[#194528] transition placeholder-[#194528] text-[#194528]"
                 />
               </div>
