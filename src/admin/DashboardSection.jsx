@@ -2,6 +2,13 @@ import React from 'react';
 import { FaChartBar, FaUsers, FaBoxes, FaUserTie, FaShoppingCart, FaPlus } from 'react-icons/fa';
 
 const DashboardSection = ({ stats }) => {
+  // Safety check for stats prop
+  const safeStats = stats || {
+    totalCustomers: 0,
+    totalStock: 0,
+    totalEmployees: 0
+  };
+
   return (
     <div className="space-y-8">
       {/* Welcome Section */}
@@ -23,7 +30,7 @@ const DashboardSection = ({ stats }) => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-lg font-medium text-gray-600 mb-2">Total Customers</p>
-              <p className="text-4xl font-bold text-gray-900">{stats.totalCustomers}</p>
+              <p className="text-4xl font-bold text-gray-900">{safeStats.totalCustomers}</p>
               <p className="text-sm text-green-600 mt-2">Active customers</p>
             </div>
             <div className="p-4 bg-blue-100 rounded-full">
@@ -36,7 +43,7 @@ const DashboardSection = ({ stats }) => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-lg font-medium text-gray-600 mb-2">Total Stock</p>
-              <p className="text-4xl font-bold text-gray-900">{stats.totalStock}</p>
+              <p className="text-4xl font-bold text-gray-900">{safeStats.totalStock}</p>
               <p className="text-sm text-green-600 mt-2">items available</p>
             </div>
             <div className="p-4 bg-green-100 rounded-full">
@@ -49,7 +56,7 @@ const DashboardSection = ({ stats }) => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-lg font-medium text-gray-600 mb-2">Employees</p>
-              <p className="text-4xl font-bold text-gray-900">{stats.totalEmployees}</p>
+              <p className="text-4xl font-bold text-gray-900">{safeStats.totalEmployees}</p>
               <p className="text-sm text-green-600 mt-2">Team members</p>
             </div>
             <div className="p-4 bg-purple-100 rounded-full">
