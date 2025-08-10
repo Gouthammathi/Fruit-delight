@@ -3,101 +3,101 @@ import { FaUsers, FaCheckCircle, FaPlus, FaEdit, FaTrash } from 'react-icons/fa'
 
 const CustomersSection = ({ customers, onAdd, onEdit, onDelete }) => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-        <div className="flex items-center space-x-4">
-          <div className="p-4 bg-blue-100 rounded-full">
-            <FaUsers className="w-8 h-8 text-blue-600" />
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+        <div className="flex items-center space-x-3">
+          <div className="p-3 bg-blue-100 rounded-full">
+            <FaUsers className="w-6 h-6 text-blue-600" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Customer Management</h1>
-            <p className="text-xl text-gray-600">Manage your customer database and relationships</p>
+            <h1 className="text-2xl font-bold text-gray-900 mb-1.5">Customer Management</h1>
+            <p className="text-base text-gray-600">Manage your customer database and relationships</p>
           </div>
         </div>
       </div>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-white p-5 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-lg font-medium text-gray-600 mb-2">Total Customers</p>
-              <p className="text-4xl font-bold text-gray-900">{customers.length}</p>
-              <p className="text-sm text-blue-600 mt-2">Active accounts</p>
+              <p className="text-base font-medium text-gray-600 mb-1.5">Total Customers</p>
+              <p className="text-3xl font-bold text-gray-900">{customers.length}</p>
+              <p className="text-xs text-blue-600 mt-1.5">Active accounts</p>
             </div>
-            <div className="p-4 bg-blue-100 rounded-full">
-              <FaUsers className="w-8 h-8 text-blue-600" />
+            <div className="p-3 bg-blue-100 rounded-full">
+              <FaUsers className="w-6 h-6 text-blue-600" />
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div className="bg-white p-5 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-lg font-medium text-gray-600 mb-2">Active Customers</p>
-              <p className="text-4xl font-bold text-gray-900">
+              <p className="text-base font-medium text-gray-600 mb-1.5">Active Customers</p>
+              <p className="text-3xl font-bold text-gray-900">
                 {customers.filter(c => c.status === 'active').length}
               </p>
-              <p className="text-sm text-green-600 mt-2">Verified accounts</p>
+              <p className="text-xs text-green-600 mt-1.5">Verified accounts</p>
             </div>
-            <div className="p-4 bg-green-100 rounded-full">
-              <FaCheckCircle className="w-8 h-8 text-green-600" />
+            <div className="p-3 bg-green-100 rounded-full">
+              <FaCheckCircle className="w-6 h-6 text-green-600" />
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <div className="bg-white p-5 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-lg font-medium text-gray-600 mb-2">New This Month</p>
-              <p className="text-4xl font-bold text-gray-900">
+              <p className="text-base font-medium text-gray-600 mb-1.5">New This Month</p>
+              <p className="text-3xl font-bold text-gray-900">
                 {customers.filter(c => {
                   const monthAgo = new Date();
                   monthAgo.setMonth(monthAgo.getMonth() - 1);
                   return new Date(c.createdAt) > monthAgo;
                 }).length}
               </p>
-              <p className="text-sm text-purple-600 mt-2">Recent additions</p>
+              <p className="text-xs text-purple-600 mt-1.5">Recent additions</p>
             </div>
-            <div className="p-4 bg-purple-100 rounded-full">
-              <FaPlus className="w-8 h-8 text-purple-600" />
+            <div className="p-3 bg-purple-100 rounded-full">
+              <FaPlus className="w-6 h-6 text-purple-600" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-900">Customer Database</h3>
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-bold text-gray-900">Customer Database</h3>
           <button
             onClick={onAdd}
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-xl transition-all duration-200 flex items-center space-x-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-2.5 rounded-lg transition-all duration-200 flex items-center space-x-2.5 shadow-md hover:shadow-lg transform hover:-translate-y-1"
           >
-            <FaPlus className="w-5 h-5" />
-            <span className="font-semibold">Add New Customer</span>
+            <FaPlus className="w-4 h-4" />
+            <span className="font-medium text-sm">Add New Customer</span>
           </button>
         </div>
         
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6">
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-4">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Customer Details</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Contact Info</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Status</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Joined</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Actions</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Customer Details</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Contact Info</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Status</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Joined</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-100 rounded-xl">
+              <tbody className="bg-white divide-y divide-gray-100 rounded-lg">
                 {customers.map((customer) => (
                   <tr key={customer.id} className="hover:bg-blue-50 transition-colors duration-200">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
+                    <td className="px-4 py-3">
+                      <div className="flex items-center space-x-2.5">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
                           <span className="text-white font-bold text-sm">
                             {customer.name.charAt(0).toUpperCase()}
                           </span>

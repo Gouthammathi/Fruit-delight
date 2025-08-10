@@ -6,7 +6,12 @@ import {
   FaSignOutAlt,
   FaBars,
   FaChevronLeft,
-  FaExclamationTriangle
+  FaExclamationTriangle,
+  FaChartBar,
+  FaUsers,
+  FaBoxes,
+  FaUserTie,
+  FaShoppingCart
 } from 'react-icons/fa';
 import DashboardSection from '../admin/DashboardSection';
 import CustomersSection from '../admin/CustomersSection';
@@ -45,45 +50,46 @@ const Admin = () => {
     return (
             <div className={`${sidebarCollapsed ? 'w-16' : 'w-64'} bg-gradient-to-b from-white to-gray-50 shadow-xl transition-all duration-300 ease-in-out border-r border-gray-200 flex-shrink-0 fixed left-0 top-0 z-10 flex flex-col`} style={{ height: '100vh' }}>
         {/* Sidebar Toggle Button */}
-        <div className="flex justify-end p-4 flex-shrink-0">
+        <div className="flex justify-end p-3 flex-shrink-0">
           <button
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            className="p-2 rounded-lg bg-green-100 text-green-600 hover:bg-green-200 transition-colors"
+            className="p-1.5 rounded-md bg-green-100 text-green-600 hover:bg-green-200 transition-colors"
             title={sidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
           >
-            {sidebarCollapsed ? <FaBars className="w-4 h-4" /> : <FaChevronLeft className="w-4 h-4" />}
+            {sidebarCollapsed ? <FaBars className="w-3.5 h-3.5" /> : <FaChevronLeft className="w-3.5 h-3.5" />}
           </button>
         </div>
         
-        <nav className="mt-4 flex-1">
+        <nav className="mt-3 flex-1">
           {[
-            { id: 'dashboard', label: 'Dashboard', icon: '📊' },
-            { id: 'customers', label: 'Customers', icon: '👥' },
-            { id: 'stock', label: 'Stock', icon: '📦' },
-            { id: 'employees', label: 'Employee Management', icon: '👔' },
-            { id: 'bulkOrders', label: 'Bulk Orders', icon: '🛒' }
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setCurrentSection(item.id)}
-              className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-6'} py-4 text-left transition-all duration-200 hover:bg-green-50 group relative ${
-                currentSection === item.id
-                  ? 'bg-green-100 text-green-700 border-r-2 border-green-600 shadow-sm'
-                  : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
-              }`}
-              title={sidebarCollapsed ? item.label : ''}
-            >
-              {currentSection === item.id && (
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-600 rounded-r-full"></div>
-              )}
-              <span className={`text-xl ${currentSection === item.id ? 'text-green-600' : 'text-gray-600 group-hover:text-green-600'}`}>
-                {item.icon}
-              </span>
-              {!sidebarCollapsed && (
-                <span className="font-medium">{item.label}</span>
-              )}
-            </button>
-          ))}
+            { id: 'dashboard', label: 'Dashboard', icon: FaChartBar },
+            { id: 'customers', label: 'Customers', icon: FaUsers },
+            { id: 'stock', label: 'Stock', icon: FaBoxes },
+            { id: 'employees', label: 'Employee Management', icon: FaUserTie },
+            { id: 'bulkOrders', label: 'Bulk Orders', icon: FaShoppingCart }
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                onClick={() => setCurrentSection(item.id)}
+                className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-1.5' : 'space-x-2 px-4'} py-3 text-left transition-all duration-200 hover:bg-green-50 group relative ${
+                  currentSection === item.id
+                    ? 'bg-green-100 text-green-700 border-r-2 border-green-600 shadow-sm'
+                    : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+                }`}
+                title={sidebarCollapsed ? item.label : ''}
+              >
+                {currentSection === item.id && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-600 rounded-r-full"></div>
+                )}
+                <Icon className={`w-5 h-5 ${currentSection === item.id ? 'text-green-600' : 'text-gray-600 group-hover:text-green-600'}`} />
+                {!sidebarCollapsed && (
+                  <span className="font-medium">{item.label}</span>
+                )}
+              </button>
+            );
+          })}
         </nav>
       </div>
     );
@@ -401,68 +407,68 @@ const Admin = () => {
       
       <main className={`flex-1 transition-all duration-300 ease-in-out ${sidebarCollapsed ? 'ml-16' : 'ml-64'}`}>
         {/* Header */}
-        <header className="bg-white shadow-sm border-b border-gray-200 px-4 py-3">
+        <header className="bg-white shadow-sm border-b border-gray-200 px-3 py-2.5">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
           <button
                 onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                className="p-1.5 rounded-md hover:bg-gray-100 transition-colors text-gray-600 hover:text-gray-800"
+                className="p-1 rounded-md hover:bg-gray-100 transition-colors text-gray-600 hover:text-gray-800"
                 title={sidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
           >
-                {sidebarCollapsed ? <FaBars className="w-4 h-4" /> : <FaChevronLeft className="w-4 h-4" />}
+                {sidebarCollapsed ? <FaBars className="w-3.5 h-3.5" /> : <FaChevronLeft className="w-3.5 h-3.5" />}
           </button>
                         <div>
-                <h1 className="text-xl font-bold text-gray-900">Admin Dashboard</h1>
+                <h1 className="text-lg font-bold text-gray-900">Admin Dashboard</h1>
                 <p className="text-xs text-gray-600">Welcome back, {user.email}</p>
                         </div>
                       </div>
             
-                        <div className="flex items-center gap-3">
-              {/* Connection Status */}
-              <div className="flex items-center gap-2 px-2 py-1.5 bg-gray-50 rounded-md">
-                <div className={`w-1.5 h-1.5 rounded-full ${
-                  connectionStatus === 'connected' ? 'bg-green-500' : 
-                  connectionStatus === 'connecting' ? 'bg-yellow-500' : 'bg-red-500'
-                }`}></div>
-                <span className="text-xs font-medium text-gray-700">
-                  {connectionStatus === 'connected' ? 'Connected' : 
-                   connectionStatus === 'connecting' ? 'Connecting...' : 'Connection Error'}
-                          </span>
-                        </div>
-              
-          <button
-                onClick={handleLogout}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors font-medium text-sm"
-          >
-                <FaSignOutAlt className="w-3.5 h-3.5" />
-                Logout
-          </button>
-        </div>
+                                                 <div className="flex items-center gap-2.5">
+               {/* Connection Status */}
+               <div className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 rounded-md">
+                 <div className={`w-1 h-1 rounded-full ${
+                   connectionStatus === 'connected' ? 'bg-green-500' : 
+                   connectionStatus === 'connecting' ? 'bg-yellow-500' : 'bg-red-500'
+                 }`}></div>
+                 <span className="text-xs font-medium text-gray-700">
+                   {connectionStatus === 'connected' ? 'Connected' : 
+                    connectionStatus === 'connecting' ? 'Connecting...' : 'Connection Error'}
+                           </span>
+                         </div>
+               
+           <button
+                 onClick={handleLogout}
+                 className="flex items-center gap-1 px-2.5 py-1 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors font-medium text-xs"
+           >
+                 <FaSignOutAlt className="w-3 h-3" />
+                 Logout
+           </button>
+         </div>
                         </div>
         </header>
 
-                {/* Main Content */}
-        <div className="p-4">
-          {renderSection()}
-          </div>
+                                 {/* Main Content */}
+         <div className="p-3">
+           {renderSection()}
+           </div>
       </main>
 
             {/* Logout Confirmation Modal */}
       {showLogoutConfirm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 max-w-sm w-full mx-4">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Confirm Logout</h3>
-            <p className="text-gray-600 mb-4 text-sm">Are you sure you want to logout from the admin panel?</p>
-            <div className="flex justify-end space-x-3">
+          <div className="bg-white rounded-lg p-5 max-w-sm w-full mx-4">
+            <h3 className="text-base font-bold text-gray-900 mb-3">Confirm Logout</h3>
+            <p className="text-gray-600 mb-3 text-xs">Are you sure you want to logout from the admin panel?</p>
+            <div className="flex justify-end space-x-2.5">
         <button
                 onClick={() => setShowLogoutConfirm(false)}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors text-sm"
+                className="px-3 py-1.5 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors text-xs"
         >
                 Cancel
         </button>
               <button
                 onClick={confirmLogout}
-                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm"
+                className="px-3 py-1.5 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-xs"
               >
                 Logout
               </button>
@@ -488,16 +494,16 @@ const Admin = () => {
       {/* Firebase Error Modal */}
       {firebaseError && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 max-w-sm w-full mx-4">
+          <div className="bg-white rounded-lg p-5 max-w-sm w-full mx-4">
             <div className="flex items-center gap-2 mb-3">
-              <FaExclamationTriangle className="w-5 h-5 text-red-500" />
-              <h3 className="text-lg font-bold text-gray-900">Connection Error</h3>
+              <FaExclamationTriangle className="w-4 h-4 text-red-500" />
+              <h3 className="text-base font-bold text-gray-900">Connection Error</h3>
             </div>
-            <p className="text-gray-600 mb-4 text-sm">{firebaseError}</p>
+            <p className="text-gray-600 mb-3 text-xs">{firebaseError}</p>
             <div className="flex justify-end">
               <button
                 onClick={() => setFirebaseError(null)}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors text-sm"
+                className="px-3 py-1.5 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors text-xs"
               >
                 Close
               </button>
