@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook,  FaInstagram, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -9,7 +9,6 @@ const Footer = () => {
   const socialLinks = [
     { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/fruitdelight01?igsh=MjZuOXgwMGplc3M0' },
     { name: 'WhatsApp', icon: FaWhatsapp, href: 'https://wa.me/918712220453' },
-    { name: 'Facebook', icon: FaFacebook, href: '#' },
   ];
 
   const footerLinks = {
@@ -20,13 +19,12 @@ const Footer = () => {
     ],
     'Services': [
       { name: 'Subscription Plans', href: '#plans' },
-      { name: 'Corporate Orders', href: '#' },
-      { name: 'Customized Boxes', href: '#' },
+      { name: 'Corporate Orders', href: 'https://wa.me/918712220453?text=Hi! I am interested in Corporate Orders for my company. Please provide more details about bulk pricing and delivery options.' },
+      { name: 'Customized Boxes', href: 'https://wa.me/918712220453?text=Hi! I would like to create a customized fruit box. Please help me with personalized fruit selections and packaging options.' },
     ],
     'Support': [
       { name: 'Contact Us', href: '#contact' },
-      { name: 'Delivery Areas', href: '#' },
-      { name: 'Sunday Holiday', href: '#' },
+      { name: 'Delivery Areas', href: 'https://wa.me/918712220453?text=Hi! I would like to know if you deliver to my area. Could you please share the list of delivery areas?' },
     ],
   };
 
@@ -72,6 +70,8 @@ const Footer = () => {
                       <a
                         href={link.href}
                         className="text-[#13381A]/80 hover:text-accent transition-colors duration-300 font-medium"
+                        target={link.href.startsWith('https://wa.me/') ? '_blank' : '_self'}
+                        rel={link.href.startsWith('https://wa.me/') ? 'noopener noreferrer' : ''}
                         onClick={(e) => {
                           if (link.href.startsWith('#')) {
                             e.preventDefault();
@@ -105,14 +105,7 @@ const Footer = () => {
               {/* Links and Credit */}
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                 {/* Policy Links */}
-                <div className="flex gap-6 text-sm">
-                  <a href="#" className="text-[#13381A]/80 hover:text-accent transition-colors duration-300 font-medium">
-                    Privacy Policy
-                  </a>
-                  <a href="#" className="text-[#13381A]/80 hover:text-accent transition-colors duration-300 font-medium">
-                    Terms of Service
-                  </a>
-                </div>
+                
 
                 {/* Developer Credit */}
                 <div className="text-sm text-[#13381A]/70">

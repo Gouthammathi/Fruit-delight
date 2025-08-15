@@ -6,22 +6,26 @@ const services = [
   {
     icon: <FaBirthdayCake className="text-[#F88B42] text-3xl mb-2" />,
     title: 'Birthday Parties',
-    desc: 'Delight your guests with fresh fruit platters and boxes for birthdays and celebrations.'
+    desc: 'Delight your guests with fresh fruit platters and boxes for birthdays and celebrations.',
+    whatsappUrl: 'https://wa.me/918712220453?text=Hi! I am planning a birthday party and would like to order fresh fruit platters and boxes. Please provide details about party packages and pricing.'
   },
   {
     icon: <FaBuilding className="text-[#F88B42] text-3xl mb-2" />,
     title: 'Corporate Orders',
-    desc: 'Bulk fruit orders for offices, events, and corporate wellness programs.'
+    desc: 'Bulk fruit orders for offices, events, and corporate wellness programs.',
+    whatsappUrl: 'https://wa.me/918712220453?text=Hi! I am interested in Corporate Orders for my company. Please provide more details about bulk pricing, office delivery schedules, and wellness program packages.'
   },
   {
     icon: <FaTruck className="text-[#F88B42] text-3xl mb-2" />,
     title: 'Raw Fruit Delivery',
-    desc: 'Get premium, handpicked raw fruits delivered straight to your doorstep.'
+    desc: 'Get premium, handpicked raw fruits delivered straight to your doorstep.',
+    whatsappUrl: 'https://wa.me/918712220453?text=Hi! I would like to order raw fruits for delivery. Please share the available fruit varieties, pricing, and delivery schedule.'
   },
   {
     icon: <FaAppleAlt className="text-[#F88B42] text-3xl mb-2" />,
     title: 'Bulk Orders',
-    desc: 'Special pricing and custom solutions for large quantity fruit orders.'
+    desc: 'Special pricing and custom solutions for large quantity fruit orders.',
+    whatsappUrl: 'https://wa.me/918712220453?text=Hi! I need to place a bulk order for fruits. Please provide information about bulk pricing, minimum quantities, and custom packaging options.'
   },
 ];
 
@@ -37,9 +41,12 @@ const BulkOrdersSection = () => (
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {services.map((service, idx) => (
-          <div
+          <a
             key={idx}
-            className="group bg-white/90 border border-[#f7e7d9] rounded-3xl shadow-xl p-8 flex flex-col items-center transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_32px_0_rgba(248,139,66,0.15)] hover:-translate-y-2 hover:border-[#F88B42]/40 cursor-pointer min-h-[240px]"
+            href={service.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white/90 border border-[#f7e7d9] rounded-3xl shadow-xl p-8 flex flex-col items-center transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_32px_0_rgba(248,139,66,0.15)] hover:-translate-y-2 hover:border-[#F88B42]/40 cursor-pointer min-h-[240px] block"
             style={{ backdropFilter: 'blur(3px)' }}
           >
             <div className="flex items-center justify-center w-20 h-20 rounded-full mb-4 bg-gradient-to-br from-[#FDF8E1] via-[#fff7e6] to-[#F88B42]/10 border-2 border-[#F88B42]/20 shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
@@ -47,7 +54,7 @@ const BulkOrdersSection = () => (
             </div>
             <h3 className="text-xl font-extrabold text-[#194528] mb-2 tracking-wide group-hover:text-[#F88B42] transition-colors duration-300 drop-shadow-sm">{service.title}</h3>
             <p className="text-gray-700 text-base leading-relaxed mt-1 text-center font-medium">{service.desc}</p>
-          </div>
+          </a>
         ))}
       </div>
     </div>

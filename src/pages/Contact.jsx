@@ -27,7 +27,6 @@ const Contact = () => (
         <div className="mb-2">(Google Map Embed Coming Soon)</div>
         <div className="flex justify-center gap-4">
           <a href="#" className="hover:text-accent transition-colors">Instagram</a>
-          <a href="#" className="hover:text-accent transition-colors">Facebook</a>
           <a href="#" className="hover:text-accent transition-colors">Email</a>
         </div>
       </section>
