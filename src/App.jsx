@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import FeastGallerySection from './components/FeastGallerySection';
+import { Analytics } from "@vercel/analytics/react"
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
   return (
     <div className={`font-sans text-base antialiased overflow-x-hidden ${containerClasses}`}>
       <Navbar />
+      <Analytics/>
       <main className={mainClasses}>
         {children}
       </main>

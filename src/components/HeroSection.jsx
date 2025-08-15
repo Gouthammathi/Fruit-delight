@@ -100,7 +100,7 @@ const HeroSection = () => {
       {/* Floating Badges/Assets */}
       {/* <img src={healthyFood} alt="Healthy Food" className="absolute top-60 left-1/3 w-16 sm:w-28 rotate-[-20deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} /> */}
       {/* <img src={farmFresh} alt="Farm Fresh" className="absolute top-[30%] left-[20%] w-16 sm:w-32 rotate-[-8deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} /> */}
-      <img src={quickDelivery} alt="Quick Delivery" className="absolute top-1/2 right-1/4 w-16 sm:w-28 rotate-[10deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} />
+      {/* <img src={quickDelivery} alt="Quick Delivery" className="absolute top-1/2 right-1/4 w-16 sm:w-28 rotate-[10deg] z-30 transition-transform duration-300 hover:-translate-y-3 hover:scale-105 hover:drop-shadow-2xl" style={{filter:'drop-shadow(0 2px 8px #0002)'}} /> */}
 
       <div className="max-w-3xl mx-auto px-8 z-10 w-full">
         <div className="flex flex-col items-center justify-center w-full h-full">
